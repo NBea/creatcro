@@ -1,0 +1,37 @@
+.wrapperSecondSnippet {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    min-height:500px;
+    width:100%;
+
+    align-items: center;
+
+    h2 {
+
+        color:var(--title);
+        font-family:var(--font-primary);
+        font-size: 42px;
+        font-weight: 500;
+        margin: 0px 40px;
+    }
+
+    img{
+        padding: 0px;
+        margin: 0px 40px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapperSecondSnippet{
+        img{
+        display: none;
+    }
+    }
+    
+    h2{
+        justify-content: center;
+        text-align: center;
+    }
+}
