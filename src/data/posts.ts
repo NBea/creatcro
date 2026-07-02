@@ -9,7 +9,6 @@ import image6 from "../assets/photography/6.jpg";
 import image8 from "../assets/photography/8.jpg";
 import image10 from "../assets/photography/10.jpg";
 import image11 from "../assets/photography/11.jpg";
-import image12 from "../assets/photography/12.jpg";
 import image13 from "../assets/photography/13.jpg";
 import image14 from "../assets/photography/14.jpg";
 import image15 from "../assets/photography/15.jpg";

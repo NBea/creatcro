@@ -2,7 +2,6 @@ import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getUser, logout } from "../../../utils/auth";
-import LanguageSwitcher from "../../sections/LanguageSwitcher/LanguageSwitcher";
 
 import logo from "../../../assets/logo3.svg";
 import menu from "../../../assets/menu.svg";
