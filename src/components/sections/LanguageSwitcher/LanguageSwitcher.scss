@@ -1,0 +1,61 @@
+.languageSwitcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(8px);
+
+  border-radius: 100px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+  z-index: 9999;
+
+  span{
+    color: var(--title);
+    font-weight: 600;
+  }
+
+  button{
+    border:none;
+    background:transparent;
+    cursor:pointer;
+
+    font-family:var(--font-primary);
+    font-size:15px;
+    font-weight:600;
+
+    color:var(--title);
+
+    transition:.25s;
+
+    &:hover{
+      opacity:.7;
+    }
+
+    &.active{
+      color:var(--blue); // ili tvoja accent boja
+    }
+  }
+}
+
+@media (max-width:768px){
+
+  .languageSwitcher{
+    bottom:16px;
+    right:16px;
+    padding:8px 14px;
+  }
+
+  .languageSwitcher button{
+    font-size:14px;
+  }
+
+}

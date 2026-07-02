@@ -16,6 +16,9 @@
     width: 40%;
     padding:auto;
     align-items: left;
+    p{
+      margin-left: 20%;
+    }
     a{
         color:var(--title);
         text-decoration: none;
@@ -23,8 +26,10 @@
         font-family:var(--font-primary);
         text-transform: uppercase;
     }
-    .bigger{
-        font-size: 45px;
+    .bigger img{
+      width: auto;
+      height: 120px;
+        
     }
 }
 .rightFooter{
@@ -55,11 +60,17 @@
     width: 50%;
     flex-direction: column;
     align-items: center;
+
+    p{
+      margin-left: 0px;
+      margin-top: 30px;
+    }
   }
 
   .rightFooter {
     width: 30%;
     align-items: center;
+    padding-bottom: 30px;
   }
 
   .leftFooter .bigger {

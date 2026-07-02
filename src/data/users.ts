@@ -1,4 +1,4 @@
-import NatureImg1 from "../assets/NaturePhotography1.jpg";
+import NatureImg1 from "../assets/artwork/Bruno.jpg";
 
 export type User = {
   id: number;
@@ -9,10 +9,10 @@ export type User = {
 };
 
 export const users: User[] = [
-  { id: 1, username: "ana", 
+  { id: 1, username: "Nika", 
     password: "1234",  
     avatar: NatureImg1, 
-    about: "My name is Ana and I'm from Canada.",
+    about: "My name is Nika and I'm from Croatia.",
   },
   { id: 2, username: "ivan", 
     password: "abcd",  

@@ -1,7 +1,7 @@
 .navbar {
   background-color: #D9D9D9;
   display: flex;
-  height: 60px;
+  height: autp;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -20,7 +20,12 @@
   }
 
 }
-
+.left img{
+  width:auto;
+  height: 40px;
+  margin:0px;
+  padding: 0px;
+}
 
 .nav-links {
   display: grid;
@@ -40,6 +45,9 @@
 .left {
   display: flex;
   align-items: center;
+  margin:0px;
+  padding: 0px;
+  justify-content: center;
 
   a {
     margin: 10px;
@@ -142,7 +150,13 @@
 
 @media (max-width: 768px) {
   .navbar {
-    height: auto;
+
+    padding: 0;
+  }
+
+  .middle.open{
+    height: 100vh;
+    margin: 0px;
   }
 
   .nav-links {
@@ -154,10 +168,20 @@
 
   .left {
     flex: 1;
+    margin:0px;
+    padding: 0px;
+    img{
+      height:60px;
+    }
   }
 
   .hamburger {
     display: block;
+    width: auto;
+    min-width: 30px;
+    height: 80px;
+    padding:0px;
+    margin: 0px;
   }
 
   .middle,

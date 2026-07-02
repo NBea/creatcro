@@ -11,6 +11,18 @@ header{
     justify-content: center;
 }
 
+header[data-lang="hr"] {
+  .heroOrange {
+    font-size: 70px;
+  }
+  .heroBlue{
+    font-size: 20px;
+  }
+  .heroTitle{
+    font-size: 18px;
+  }
+}
+
 header::before {
   content: "";
   position: absolute;

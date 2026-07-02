@@ -1,44 +1,117 @@
 import "./About.scss";
 import easelIcon from "../../../assets/easel-icon.png";
+import { useEffect, useState } from "react";
 
+function About() {
+  const [language, setLanguage] = useState<"hr" | "en">("en");
 
-function About(){
-    return (
+  useEffect(() => {
+    const saved = localStorage.getItem("language") as "hr" | "en";
+    if (saved) setLanguage(saved);
+  }, []);
 
-        <div className="box-about">
-            <h1 className="aboutTitle">What to do here?</h1>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>Want to post your photographs? <span className="blue">Post them.</span></p>
-            </div>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>Do you want to sketch a little something or take a whole chunk of your life on this master piece? <span className="blue">Either one if perfect! </span></p> 
-            </div>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>Want to draw something but don’t have an idea? <span className="blue">We got you!</span></p>
-            </div>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>Take a look at some of our community photography and <span className="blue">draw just what you see!</span></p>
-            </div>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>
-                    <span className="blue">Share </span>
-                    with us what you created and surprise the photographer with you idea of their piece and take a look what others have came up with.  
-                </p>
-            </div>
-            <div className="aboutBox">
-                <img src={easelIcon} alt="brush"/>
-                <p>Just want to browse?
-                    <span className="blue"> Got it! </span>
-                    Take a look at the masterpieces artists created.
-                </p>
-            </div>
-        </div>
-    );
+  return (
+    <div className="box-about">
+
+      <h1 className="aboutTitle">
+        {language === "hr" ? "Što možeš raditi ovdje?" : "What to do here?"}
+      </h1>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              Želiš objaviti svoje fotografije? <span className="blue">Objavi ih.</span>
+            </>
+          ) : (
+            <>
+              Want to post your photographs? <span className="blue">Post them.</span>
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              Želiš skicirati nešto ili stvoriti cijeli komad svog života u umjetnosti?{" "}
+              <span className="blue">Bilo što je savršeno!</span>
+            </>
+          ) : (
+            <>
+              Do you want to sketch something or capture a part of your life in a masterpiece?{" "}
+              <span className="blue">Either one is perfect!</span>
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              Nemaš ideju što crtati? <span className="blue">Mi smo tu za tebe!</span>
+            </>
+          ) : (
+            <>
+              Don’t have an idea what to draw? <span className="blue">We’ve got you!</span>
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              Pogledaj fotografije zajednice i <span className="blue">nacrtaj ono što vidiš!</span>
+            </>
+          ) : (
+            <>
+              Take a look at community photography and{" "}
+              <span className="blue">draw what you see!</span>
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              <span className="blue">Podijeli</span> s nama što si stvorio i iznenadi fotografa svojom interpretacijom.
+            </>
+          ) : (
+            <>
+              <span className="blue">Share</span> what you created and surprise the photographer with your interpretation.
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="aboutBox">
+        <img src={easelIcon} alt="brush" />
+        <p>
+          {language === "hr" ? (
+            <>
+              Samo želiš pregledavati? <span className="blue">Nema problema!</span> Pogledaj radove zajednice.
+            </>
+          ) : (
+            <>
+              Just want to browse? <span className="blue">No problem!</span> Check out the community masterpieces.
+            </>
+          )}
+        </p>
+      </div>
+
+    </div>
+  );
 }
 
 export default About;

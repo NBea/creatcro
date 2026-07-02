@@ -2,10 +2,16 @@ import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getUser, logout } from "../../../utils/auth";
+import LanguageSwitcher from "../../sections/LanguageSwitcher/LanguageSwitcher";
+
+import logo from "../../../assets/logo3.svg";
+import menu from "../../../assets/menu.svg";
+import menuClose from "../../../assets/menu-close.svg";
 
 function Navbar() {
   const [user, setUser] = useState(getUser());
   const [menuOpen, setMenuOpen] = useState(false);
+  const [language, setLanguage] = useState<"hr" | "en">("en");
 
   useEffect(() => {
     const handleChange = () => {
@@ -19,33 +25,44 @@ function Navbar() {
     };
   }, []);
 
+  // language sync
+  useEffect(() => {
+    const saved = localStorage.getItem("language") as "hr" | "en";
+    if (saved) setLanguage(saved);
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="nav-links">
+
         <div className="left">
           <Link to="/" className="nav-home">
-            Croatcro
+            <img src={logo} alt="CreatCro" />
           </Link>
         </div>
 
         <button
           className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(prev => !prev)}
         >
-          ☰
+          {menuOpen ? <img src={menuClose} alt="menu-close" /> : <img src={menu} alt="menu" />}
         </button>
 
+        {/* MIDDLE LINKS */}
         <div className={`middle ${menuOpen ? "active" : ""}`}>
           <Link to="/challenge" onClick={() => setMenuOpen(false)}>
-            Challenge
+            {language === "hr" ? "Izazov" : "Challenge"}
           </Link>
 
           <Link to="/gallery" onClick={() => setMenuOpen(false)}>
-            Gallery
+            {language === "hr" ? "Galerija" : "Gallery"}
           </Link>
         </div>
 
+        {/* RIGHT SIDE */}
         <div className={`right ${menuOpen ? "active" : ""}`}>
+
+
           {user ? (
             <>
               <Link
@@ -66,7 +83,7 @@ function Navbar() {
                   setMenuOpen(false);
                 }}
               >
-                Logout
+                {language === "hr" ? "Odjava" : "Logout"}
               </button>
             </>
           ) : (
@@ -76,18 +93,19 @@ function Navbar() {
                 className="join"
                 onClick={() => setMenuOpen(false)}
               >
-                Join
+                {language === "hr" ? "Pridruži se" : "Join"}
               </Link>
 
               <Link
                 to="/login"
                 onClick={() => setMenuOpen(false)}
               >
-                Log in
+                {language === "hr" ? "Prijava" : "Log in"}
               </Link>
             </>
           )}
         </div>
+
       </div>
     </nav>
   );
